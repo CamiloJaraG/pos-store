@@ -2,6 +2,12 @@
 Este proyecto se basa en el repositorio original:  
 https://github.com/wdavilav/pos-store
 
+### Clona el proyecto
+```bash
+git clone https://github.com/wdavilav/pos-store.git
+cd pos-store
+```
+  
 ```bash  
 docker run -d -p 8080:8080 pos-store:latest
 ```
