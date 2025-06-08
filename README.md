@@ -8,7 +8,7 @@ docker run -d -p 8080:8080 pos-store:latest
 ```
 
 ### Contenido de archivo Dockerfile  
-```
+```dockerfile
 # Dockerfile
 FROM python:3.10-slim
 
