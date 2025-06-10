@@ -33,9 +33,6 @@ Instala la última versión de Docker
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```  
 
-```bash  
-docker run -d -p 8080:8080 pos-store:latest
-```
 
 ### Contenido de archivo Dockerfile  
 ```dockerfile
@@ -93,4 +90,18 @@ python manage.py shell --command='from core.utils import *'
 # Arrancar servidor
 echo "Iniciando servidor Django"
 exec "$@"
+```
+
+
+
+
+
+
+
+
+
+
+### Correr el contenedor
+```bash  
+docker run -d -p 8080:8080 pos-store:latest
 ```
