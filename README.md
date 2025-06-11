@@ -90,13 +90,19 @@ python manage.py shell --command='from core.utils import *'
 # Arrancar servidor
 echo "Iniciando servidor Django"
 exec "$@"
-```  
-
-### Inserción manual de datos
+```    
+### Ejecución de environment
 ```bash
+sudo apt install python3
+python3 -m venv env
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
 python manage.py shell --command='from core.init import *'
 python manage.py shell --command='from core.utils import *'
-```
+python manage.py runserver:8080
+```  
+'
 
 
 
