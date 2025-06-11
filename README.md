@@ -90,9 +90,13 @@ python manage.py shell --command='from core.utils import *'
 # Arrancar servidor
 echo "Iniciando servidor Django"
 exec "$@"
+```  
+
+### Inserción manual de datos
+```bash
+python manage.py shell --command='from core.init import *'
+python manage.py shell --command='from core.utils import *'
 ```
-
-
 
 
 
