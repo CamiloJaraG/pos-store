@@ -1,3 +1,6 @@
+# Aunque, no pareciera que vamos a usar Docker en esto.
+# Este archivo terminó siendo relleno más que nada.
+
 # Dockerfile
 FROM python:3.10-slim
 
