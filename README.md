@@ -26,7 +26,12 @@ sudo apt install nginx gunicorn python3 python3-venv python3-pip libpq-dev certb
 ```bash
 python3 -m venv env
 source env/bin/activate
-```  
+```
+### Instala requerimientos
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
 ### Instala más paquetes necesarios
 ```bash
 sudo apt update && sudo apt install -y \
