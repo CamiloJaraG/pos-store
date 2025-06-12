@@ -5,7 +5,8 @@ https://github.com/wdavilav/pos-store
 ## Instalación del proyecto  
 ### Hacer actualizaciones
 ```bash
-sudo apt update && apt upgrade
+sudo apt update
+sudo apt upgrade
 ```  
 ### Clona el proyecto y entra en la carpeta
 ```bash
