@@ -43,3 +43,8 @@ sudo apt update && sudo apt install -y \
     build-essential
 
 ```
+### Para probar
+Correr la aplicación en segundo plano con gunicorn
+```bash
+nohup gunicorn config.wsgi:application --bind 0.0.0.0:8080 &
+```
