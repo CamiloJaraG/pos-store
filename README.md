@@ -22,3 +22,8 @@ Guarda con Ctrl + O y luego Ctrl + X.
 ```bash
 sudo apt install nginx gunicorn python3 python3-venv python3-pip libpq-dev certbot python3-certbot-nginx
 ```  
+### Inicia environment de Python
+```bash
+python3 -m venv env
+source env/bin/activate
+```
