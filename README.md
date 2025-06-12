@@ -18,3 +18,7 @@ cd pos-store
 nano .env.local
 ```
 Guarda con Ctrl + O y luego Ctrl + X.  
+### Instala los paquetes necesarios
+```bash
+sudo apt install nginx gunicorn python3 python3-venv python3-pip libpq-dev certbot python3-certbot-nginx
+```  
