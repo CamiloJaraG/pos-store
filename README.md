@@ -21,9 +21,26 @@ Guarda con Ctrl + O y luego Ctrl + X.
 ### Instala los paquetes necesarios
 ```bash
 sudo apt install nginx gunicorn python3 python3-venv python3-pip libpq-dev certbot python3-certbot-nginx
+
 ```  
 ### Inicia environment de Python
 ```bash
 python3 -m venv env
 source env/bin/activate
+```  
+### Instala más paquetes necesarios
+```bash
+sudo apt update && sudo apt install -y \
+    libpango-1.0-0 \
+    libcairo2 \
+    libgdk-pixbuf2.0-0 \
+    libffi-dev \
+    libpangocairo-1.0-0 \
+    libjpeg-dev \
+    libxml2 \
+    libxslt1.1 \
+    libssl-dev \
+    libcurl4-openssl-dev \
+    build-essential
+
 ```
