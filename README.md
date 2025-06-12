@@ -48,3 +48,26 @@ Correr la aplicación en segundo plano con gunicorn
 ```bash
 nohup gunicorn config.wsgi:application --bind 0.0.0.0:8080 &
 ```
+
+### Configuración de Nginx
+```bash
+server {
+    listen 80;
+    server_name pos-store.me www.pos-store.me;
+
+    location /static/ {
+        alias /home/ubuntu/pos-store/staticfiles/;
+        autoindex on;
+        access_log /var/log/nginx/static_access.log;
+        error_log /var/log/nginx/static_error.log debug;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
