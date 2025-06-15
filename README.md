@@ -48,7 +48,7 @@ sudo apt update && sudo apt install -y \
     build-essential
 
 ```
-### Configuración de systemmd o como se llame para Gunicorn
+### Configuración de systemd para Gunicorn
 ```bash
 [Unit]
 Description=gunicorn daemon for pos-store
