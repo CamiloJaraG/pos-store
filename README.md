@@ -48,7 +48,21 @@ sudo apt update && sudo apt install -y \
     build-essential
 
 ```
+### Configuración de systemmd o como se llame para Gunicorn
+```bash
+[Unit]
+Description=gunicorn daemon for pos-store
+After=network.target
 
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/pos-store
+ExecStart=/home/ubuntu/pos-store/env/bin/gunicorn --access-logfile - --workers 3 --bind 127.0.0.1:8080 config.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+```
 ### Configuración inicial de Nginx
 ```bash
 server {
