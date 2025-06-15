@@ -48,13 +48,8 @@ sudo apt update && sudo apt install -y \
     build-essential
 
 ```
-### Para probar
-Correr la aplicación en segundo plano con gunicorn
-```bash
-nohup gunicorn config.wsgi:application --bind 0.0.0.0:8080 &
-```
 
-### Configuración de Nginx
+### Configuración inicial de Nginx
 ```bash
 server {
     listen 80;
@@ -75,4 +70,45 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
+```
+### Añadir HTTPS
+```bash
+
+```
+
+### Cómo debería quedar la configuración de Nginx
+```bash
+# Bloque para HTTP, solo redirige a HTTPS
+server {
+    listen 80;
+    server_name pos-store.me www.pos-store.me;
+
+    return 301 https://$host$request_uri;
+}
+
+# Bloque para HTTPS que sirve la app
+server {
+    listen 443 ssl;
+    server_name pos-store.me www.pos-store.me;
+
+    ssl_certificate /etc/letsencrypt/live/pos-store.me/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pos-store.me/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    location /static/ {
+        alias /home/ubuntu/pos-store/staticfiles/;
+        # Opcional para debug:
+        autoindex on;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
 ```
