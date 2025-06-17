@@ -67,6 +67,10 @@ ExecStart=/home/ubuntu/pos-store/env/bin/gunicorn --access-logfile - --workers 3
 [Install]
 WantedBy=multi-user.target
 ```
+### Crear el archivo de configuración de Nginx
+```bash
+sudo nano /etc/nginx/sites-available/pos-store.me
+```
 ### Configuración inicial de Nginx
 ```bash
 server {
