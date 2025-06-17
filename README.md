@@ -48,6 +48,10 @@ sudo apt update && sudo apt install -y \
     build-essential
 
 ```
+### Crear un archivo systemd para Gunicorn
+```bash
+sudo nano /etc/systemd/system/gunicorn.service
+```  
 ### Configuración de systemd para Gunicorn
 ```bash
 [Unit]
