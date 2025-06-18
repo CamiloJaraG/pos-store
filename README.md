@@ -109,7 +109,7 @@ sudo ln -s /etc/nginx/sites-available/pos-store.me /etc/nginx/sites-enabled/
 ```bash
 sudo nginx -t && sudo systemctl reload nginx
 ```
-### Añadir HTTPS (Si se tiene un dominio)
+### Añadir HTTPS (Solo si se tiene un dominio)
 ```bash
 sudo certbot --nginx -d pos-store.me www.pos-store.me
 ```  
