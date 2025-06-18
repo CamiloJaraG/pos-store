@@ -79,6 +79,7 @@ sudo systemctl start gunicorn
 sudo nano /etc/nginx/sites-available/pos-store.me
 ```
 ### Configuración inicial de Nginx
+Solo agregar dominios a server_name si se posee uno, de lo contrario escribir la dirección IP pública de la máquina donde esté realizando la instalación
 ```bash
 server {
     listen 80;
@@ -108,7 +109,7 @@ sudo ln -s /etc/nginx/sites-available/pos-store.me /etc/nginx/sites-enabled/
 ```bash
 sudo nginx -t && sudo systemctl reload nginx
 ```
-### Añadir HTTPS
+### Añadir HTTPS (Si se tiene un dominio)
 ```bash
 sudo certbot --nginx -d pos-store.me www.pos-store.me
 ```  
