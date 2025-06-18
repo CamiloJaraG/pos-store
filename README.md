@@ -67,6 +67,12 @@ ExecStart=/home/ubuntu/pos-store/env/bin/gunicorn --access-logfile - --workers 3
 [Install]
 WantedBy=multi-user.target
 ```
+### Ejecutar Gunicorn 
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable gunicorn
+sudo systemctl start gunicorn
+```
 ### Crear el archivo de configuración de Nginx
 ```bash
 sudo nano /etc/nginx/sites-available/pos-store.me
@@ -93,8 +99,17 @@ server {
     }
 }
 ```
+### Copiar configuración de Nginx para crear enlace simbólico
+```bash
+sudo ln -s /etc/nginx/sites-available/pos-store.me /etc/nginx/sites-enabled/
+```
+### Reiniciar Nginx
+```bash
+sudo nginx -t && sudo systemctl reload nginx
+```
 ### Añadir HTTPS
 ```bash
 sudo certbot --nginx -d pos-store.me www.pos-store.me
-```
-
+```  
+Proporcionar correo electrónico y aceptar términos y condiciones.  
+Si las direcciones agregadas en el archivo están en los registros del DNS, entonces Certbot logrará desplegar certificados para las mismas.
