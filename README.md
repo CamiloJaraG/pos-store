@@ -119,4 +119,8 @@ Si las direcciones agregadas en el archivo están en los registros del DNS, ento
 ```bash
 sudo chmod -R o+r /home/ubuntu/pos-store/staticfiles
 sudo find /home/ubuntu/pos-store/staticfiles -type d -exec chmod o+x {} \;
+sudo chown -R ubuntu:ubuntu /home/ubuntu/pos-store/staticfiles
+sudo find /home/ubuntu/pos-store/staticfiles -type d -exec chmod 755 {} \;
+sudo find /home/ubuntu/pos-store/staticfiles -type f -exec chmod 644 {} \;
+
 ```
