@@ -2,7 +2,8 @@
 Este proyecto se basa en el repositorio original:  
 https://github.com/wdavilav/pos-store
 
-## Instalación del proyecto  
+## Instalación del proyecto
+### Dentro de una máquina con Ubuntu 22:  
 ### Hacer actualizaciones
 ```bash
 sudo apt update && sudo apt upgrade
