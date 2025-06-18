@@ -4,32 +4,43 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-lg-4">
-                <form method="post" id="frmForm" autocomplete="off">
-                    {% csrf_token %}
-                    <input type="hidden" name="next" value="{{ next }}">
-                    <i class="{{ dashboard.icon }} fa-4x mb-3"></i>
-                    <h1 class="h3 mb-3 fw-normal">Inicio de Sesión</h1>
-                    <div class="mb-3">
-                        <div class="form-floating">
-                            {{ form.username }}
-                            <label for="{{ form.username.name }}">{{ form.username.label }}</label>
-                        </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form method="post" id="frmForm" autocomplete="off">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ next }}">
+                            <div class="text-center mb-3">
+                                <h5>Conectado a la 1ra máquina</h5>
+                                <h1 class="display display-5">POS-STORE S.A.</h1>
+                                <i class="{{ dashboard.icon }} fa-4x mb-3"></i>
+                                <h1 class="h3 mb-3 fw-normal">Inicio de sesión</h1>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    {{ form.username }}
+                                    <label for="{{ form.username.name }}">{{ form.username.label }}</label>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="form-floating flex-grow-1">
+                                    {{ form.password }}
+                                    <label for="{{ form.password.name }}">{{ form.password.label }}</label>
+                                </div>
+                                <button class="input-group-text btn btn-secondary btnShowPassword" type="button">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <button class="w-100 btn btn-lg btn-dark mt-3" type="submit">
+                                <i class="fas fa-sign-in-alt"></i> Ingresar
+                            </button>
+                            <p class="p-3 h6 details text-center">Si desea recuperar su <i class="fas fa-key"></i> contraseña puede dar <a href="{% url 'login_reset_password' %}">click en el siguiente enlace.</a></p>
+                        </form>
                     </div>
-                    <div class="input-group mb-3">
-                        <div class="form-floating flex-grow-1">
-                            {{ form.password }}
-                            <label for="{{ form.password.name }}">{{ form.password.label }}</label>
-                        </div>
-                        <button class="input-group-text btn btn-secondary btnShowPassword" type="button">
-                            <i class="fas fa-eye"></i>
-                        </button>
+                    <div class="card-footer text-center">
+                        <p class="mt-3 mb-0 text-muted"><i class="fa-solid fa-copyright"></i> 2023–2025</p>
+                        <p class="text-muted">Subido a la nube con propósitos educativos.</p>
                     </div>
-                    <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">
-                        <i class="fas fa-sign-in-alt"></i> Ingresar
-                    </button>
-                    <p class="p-3 h6 details">Si desea recuperar su <i class="fas fa-key"></i> contraseña puede dar <a href="{% url 'login_reset_password' %}">click</a> en el siguiente enlace.</p>
-                    <p class="mt-5 mb-3 text-muted">© 2023–2024</p>
-                </form>
+                </div>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 {% load static %}
 {% load security_extras %}
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid px-5">
             <a class="navbar-brand" href="{% url 'dashboard' %}">
                 <img alt="" src="{{ dashboard.get_image }}" class="img-fluid img-sm"> {{ dashboard.name }}
@@ -40,7 +40,7 @@
                             </li>
                             <li>
                                 <a class="dropdown-item" href="{% url 'dashboard_update' %}">
-                                    <i class="fas fa-tools"></i> Conf. Dashboard
+                                    <i class="fas fa-tools"></i> Dashboard
                                 </a>
                             </li>
                         </ul>
@@ -95,15 +95,22 @@
             </div>
             <div id="navbarCollapse" class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'user_update_password' %}">
-                            <i class="fas fa-key"></i> Actualizar Contraseña
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-cog"></i> Cuenta
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'user_update_profile' %}">
-                            <i class="fas fa-user"></i> Actualizar Perfil
-                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="{% url 'user_update_password' %}">
+                                    <i class="fas fa-key"></i> Actualizar contraseña
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'user_update_profile' %}">
+                                    <i class="fas fa-user"></i> Actualizar perfil
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     {% if request.user.has_at_least_one_group %}
                         <li class="nav-item dropdown">

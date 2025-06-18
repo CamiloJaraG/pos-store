@@ -8,16 +8,16 @@
 {% endblock %}
 
 {% block columns %}
-    <th>Id</th>
-    <th>Cliente</th>
-    <th>Fecha de registro</th>
+    <th><i class="fa-solid fa-list-ol"></i> ID</th>
+    <th><i class="fa-solid fa-user"></i> Cliente</th>
+    <th><i class="fa-solid fa-calendar-day"></i> Fecha de registro</th>
     <th>Subtotal</th>
     <th>IVA</th>
-    <th>Dscto</th>
+    <th><i class="fa-solid fa-percent"></i> Dto</th>
     <th>Total</th>
     <th>Efectivo</th>
     <th>Cambio</th>
-    <th>Opciones</th>
+    <th><i class="fa-solid fa-gear"></i> Opciones</th>
 {% endblock %}
 
 {% block javascript_list %}
@@ -32,7 +32,7 @@
                 </div>
                 <div class="modal-body">
                     <table style="width:100%;" class="table table-bordered table-sm" id="tblProducts">
-                        <thead>
+                        <thead class="table-dark">
                         <tr>
                             <th>Nombre</th>
                             <th>Precio</th>

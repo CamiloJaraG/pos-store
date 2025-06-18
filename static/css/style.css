@@ -1,3 +1,7 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 .author {
     text-decoration: none !important;
 }
@@ -5,11 +9,6 @@
 .img-sm {
     max-width: 30px;
     margin-right: 10px;
-}
-
-.table thead tr {
-    background-color: #e6e4e4 !important;
-    color: #000000 !important;
 }
 
 .table thead th {
@@ -54,11 +53,28 @@
 }
 
 .loading {
-    font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 600;
     font-size: 16px;
     text-align: center;
     position: absolute;
     top: 36%;
     width: 100%;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+}
+
+.navbar-brand {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+}
+
+.navbar-brand:hover {
+    color: #d6d6d6 !important;
+}
+
+.dropdown-item:active {
+    background-color: #343a40 !important;
 }

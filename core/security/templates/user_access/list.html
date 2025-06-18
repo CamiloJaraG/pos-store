@@ -8,14 +8,14 @@
 {% endblock %}
 
 {% block columns %}
-    <th>Número</th>
-    <th>Usuario</th>
-    <th>Fecha de registro</th>
-    <th>Hora</th>
-    <th>Localhost</th>
-    <th>D.Conexión</th>
+    <th><i class="fa-solid fa-list-ol"></i> Número</th>
+    <th><i class="fa-solid fa-user"></i> Usuario</th>
+    <th><i class="fa-solid fa-calendar-day"></i> Fecha de registro</th>
+    <th><i class="fa-solid fa-clock"></i> Hora</th>
+    <th><i class="fa-solid fa-wifi"></i> Localhost</th>
+    <th><i class="fa-solid fa-display"></i> Datos de conexión</th>
     <th>Tipo de Intento</th>
-    <th class="text-center">Opciones</th>
+    <th class="text-center"><i class="fa-solid fa-gear"></i> Opciones</th>
 {% endblock %}
 
 {% block javascript_list %}
@@ -29,7 +29,7 @@
                 <label class="form-label fw-bold">{{ form.date_range.label }}:</label>
                 <div class="input-group mb-3">
                     {{ form.date_range }}
-                    <button class="btn btn-primary btnSearchAll" type="button" id="button-addon2">
+                    <button class="btn btn-dark btnSearchAll" type="button" id="button-addon2">
                         <i class="fas fa-calendar-check"></i> Ver todas
                     </button>
                 </div>
