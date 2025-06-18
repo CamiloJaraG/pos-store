@@ -113,3 +113,8 @@ sudo certbot --nginx -d pos-store.me www.pos-store.me
 ```  
 Proporcionar correo electrónico y aceptar términos y condiciones.  
 Si las direcciones agregadas en el archivo están en los registros del DNS, entonces Certbot logrará desplegar certificados para las mismas.
+### Dar permisos a Nginx para poder acceder a la carpeta de los archivos estáticos
+```bash
+sudo chmod -R o+r /home/ubuntu/pos-store/staticfiles
+sudo find /home/ubuntu/pos-store/staticfiles -type d -exec chmod o+x {} \;
+```
